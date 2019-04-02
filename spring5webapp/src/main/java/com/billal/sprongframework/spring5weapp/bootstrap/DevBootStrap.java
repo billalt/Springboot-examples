@@ -42,14 +42,14 @@ public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> 
         publisherRepository.save(publisher1);
         publisherRepository.save(publisher2);
 
-        Author billal = new Author("Billal" , "Taha");
+        Author billal = new Author("Billal" , "Taha", publisher1);
         Book ddd = new Book("My new book" , "1234" , publisher1);
         billal.getBooks().add(ddd);
         ddd.getAuthor().add(billal);
         authorRepository.save(billal);
         bookRepository.save(ddd);
 
-        Author rod = new Author("Rod" , "Evans");
+        Author rod = new Author("Rod" , "Evans",  publisher2);
         Book noEJB = new Book("JEE devlopment without EJB" , "22331" , publisher2);
         rod.getBooks().add(noEJB);
         noEJB.getAuthor().add(rod);
